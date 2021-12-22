@@ -1,0 +1,10 @@
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "fuser -k 9229/tcp >/dev/null 2>&1; node --inspect -r ts-node/register src/main.ts",
+  "events": {
+    "restart": "fuser -k 3000/tcp >/dev/null 2>&1"
+  },
+  "signal": "SIGTERM"
+}
